@@ -1,10 +1,13 @@
 Package: com.xyaman.libkuro
 Name: libKuro
 Architecture: iphoneos-arm
-Description: Very simple image library to get primary color.
+Description: Very simple image library.
 Maintainer: Diego Barría
 Author: Diego Barría
 Section: System
 Tag: role::developer
-Version: 0.0.1-3+debug
+Depiction: https://repo.xyaman.xyz/depictions/index.html?p=libkuro
+SileoDepiction: https://repo.xyaman.xyz/depictions/libkuro/depiction.json
+Icon: https://repo.xyaman.xyz/depictions/libkuro/assets/icon.png
+Version: 0.0.2
 Installed-Size: 172

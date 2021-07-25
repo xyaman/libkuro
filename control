@@ -1,9 +1,12 @@
 Package: com.xyaman.libkuro
 Name: libKuro
-Version: 0.0.1
+Version: 0.0.2
 Architecture: iphoneos-arm
 Description: Very simple image library.
 Maintainer: Diego Barría
 Author: Diego Barría
 Section: System
 Tag: role::developer
+Depiction: https://repo.xyaman.xyz/depictions/index.html?p=libkuro
+SileoDepiction: https://repo.xyaman.xyz/depictions/libkuro/depiction.json
+Icon: https://repo.xyaman.xyz/depictions/libkuro/assets/icon.png
