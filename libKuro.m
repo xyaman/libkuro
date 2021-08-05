@@ -1,7 +1,9 @@
 #import "public/libKuro.h"
 
 @implementation Kuro : NSObject
-+ (UIColor *) getPrimaryColor:(UIImage*) image{
++ (UIColor *) getPrimaryColor:(UIImage*) image {
+
+    if(!image) return [UIColor whiteColor];
 
     CIImage *inputImage = [CIImage imageWithCGImage:image.CGImage];
     CIVector *extentVector = [CIVector vectorWithX:inputImage.extent.origin.x Y:inputImage.extent.origin.y Z:inputImage.extent.size.width W:inputImage.extent.size.height];
@@ -28,6 +30,8 @@
 
 // It generally won't work as expected, probably I'll be using this function just for now
 + (BOOL) isDarkImage:(UIImage*) inputImage {
+
+    if(!inputImage) return [UIColor whiteColor];
     
     BOOL isDark = FALSE;
     
@@ -61,6 +65,8 @@
 // https://www.w3.org/WAI/ER/WD-AERT/#color-contrast
 + (BOOL) isDarkColor:(UIColor *) color {
 
+    if(!color) return [UIColor whiteColor];
+
     const CGFloat *componentColors = CGColorGetComponents(color.CGColor);
     CGFloat colorBrightness = ((componentColors[0] * 299) + (componentColors[1] * 587) + (componentColors[2] * 114)) / 1000;
 
@@ -69,6 +75,9 @@
 
 // https://stackoverflow.com/questions/11598043/get-slightly-lighter-and-darker-color-from-uicolor
 + (UIColor *)lighterColorForColor:(UIColor *)c {
+    
+    if(!c) return [UIColor whiteColor];
+
     CGFloat r, g, b, a;
     if ([c getRed:&r green:&g blue:&b alpha:&a]) {
         return [UIColor colorWithRed:MIN(r + 0.2, 1.0) green:MIN(g + 0.2, 1.0) blue:MIN(b + 0.2, 1.0) alpha:a];
@@ -78,6 +87,9 @@
 }
 
 + (UIColor *)darkerColorForColor:(UIColor *)c {
+
+    if(!c) return [UIColor whiteColor];
+    
     CGFloat r, g, b, a;
     if ([c getRed:&r green:&g blue:&b alpha:&a]) {
         return [UIColor colorWithRed:MAX(r - 0.2, 0.0) green:MAX(g - 0.2, 0.0) blue:MAX(b - 0.2, 0.0) alpha:a];
